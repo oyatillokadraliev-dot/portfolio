@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Али | Premium Web & Bot Development</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Синее неоновое свечение на фоне -->
+    <div class="background-glow bg-glow-1"></div>
+    <div class="background-glow bg-glow-2"></div>
+
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">ALI<span class="dot">.</span>DEV</div>
+            <div class="nav-links">
+                <a href="#projects">Проекты</a>
+                <a href="#pricing">Цены</a>
+                <a href="#contact" class="btn-nav">Связаться</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Главный экран -->
+    <header class="hero">
+        <div class="container hero-container">
+            <div class="hero-badge">Fullstack Developer</div>
+            <h1>Али — <span class="gradient-text">разработчик сайтов</span> и Telegram-ботов</h1>
+            <p class="subtitle">Создаю сайты, ботов и веб-приложения, которые помогают бизнесу привлекать клиентов и автоматизировать работу.</p>
+            <div class="tech-stack">
+                <span>HTML5 / CSS3</span>
+                <span>JavaScript</span>
+                <span>Python</span>
+            </div>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">Посмотреть проекты</a>
+                <a href="#contact" class="btn-secondary">Связаться</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Бизнес-решения -->
+    <section class="business-solutions">
+        <div class="container">
+            <div class="solutions-grid">
+                <div class="solution-card glass-card">
+                    <div class="solution-icon">📈</div>
+                    <h3>Сайты, которые поднимают продажи</h3>
+                    <p>Разработаю современный сайт, который увеличит продажи для вашего бизнеса: будь то уютная кофейня, ресторан, стоматология, автосервис, салон красоты или онлайн-магазин. Клиенты увидят ваши преимущества и сразу оставят заявку.</p>
+                </div>
+                <div class="solution-card glass-card">
+                    <div class="solution-icon">🤖</div>
+                    <h3>Автоматизация процессов 24/7</h3>
+                    <p>Создам умного Telegram-бота, который принимает заявки вместо администратора 24 на 7, консультирует клиентов, рассчитывает стоимость услуг и моментально отправляет данные вам. Ни один клиент не будет упущен.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+          <!-- Блок проектов с точными ссылками -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Реализованные кейсы</h2>
+            <div class="projects-grid">
+                
+                <!-- Карточка 1: KadrGram -->
+                <div class="project-card glass-card">
+                    <div class="card-image-container">
+                        <img src="kadrgram1.png" alt="KadrGram" class="project-img">
+                        <div class="project-status">LIVE SYSTEM</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>💬 KadrGram</h3>
+                        <p>Собственный веб-мессенджер. Система аккаунтов, обмен сообщениями, кастомный real-time интерфейс.</p>
+                        <div class="card-tags"><span>Python</span><span>Flask</span><span>MongoDB</span></div>
+                        
+                        <div class="card-buttons-group">
+                            <a href="https://github.com" target="_blank" class="btn-project">GitHub</a>
+                            <button class="btn-project btn-more" onclick="openModal('modal-kadrgram')">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 2: Сайт рецептов (С привязанной ссылкой GitHub) -->
+                <div class="project-card glass-card">
+                    <div class="card-image-container">
+                        <img src="cookbook.jpg" alt="CookBook" class="project-img">
+                        <div class="project-status">PRODUCTION</div>
+                    </div>
+                    <div class="container-card-content card-content">
+                        <h3>🍔 Сайт рецептов</h3>
+                        <p>Информационный веб-каталог рецептов, поиск блюд, полностью адаптивный дизайн под смартфоны.</p>
+                        <div class="card-tags"><span>HTML5 / CSS3</span><span>JS ES6+</span></div>
+                        
+                        <div class="card-buttons-group">
+                            <!-- Ссылка на ваш репозиторий CookBook -->
+                            <a href="https://github.com/oyatillokadraliev-dot/CookBook" target="_blank" class="btn-project">GitHub</a>
+                            <button class="btn-project btn-more" onclick="openModal('modal-cookbook')">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ KADRGRAM -->
+    <div id="modal-kadrgram" class="modal-overlay" onclick="closeModal('modal-kadrgram')">
+        <div class="modal-window glass-card" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal('modal-kadrgram')">&times;</button>
+            
+            <div class="card-image-container slider-container" id="slider-kadrgram">
+                <div class="slider-track">
+                    <img src="kadrgram1.png" alt="Скриншот 1" class="project-img active">
+                    <img src="kadrgram2.png" alt="Скриншот 2" class="project-img">
+                    <img src="kadrgram3.png" alt="Скриншот 3" class="project-img">
+                    <img src="kadrgram4.png" alt="Скриншот 4" class="project-img">
+                </div>
+                <button class="slider-btn prev-btn">‹</button>
+                <button class="slider-btn next-btn">›</button>
+            </div>
+
+            <div class="modal-text-content">
+                <h2>💬 KadrGram</h2>
+                <p class="modal-desc-title">Мой проект: собрал собственный Telegram на Python и Flask!</p>
+                <p>Решил не мелочиться и написать с нуля полноценный веб-мессенджер, который назвал KadrGram. Главная цель была — сделать интерфейс максимально близким к оригиналу, быстрым и без унылых перезагрузок страниц при каждом клике.</p>
+                
+                <h3>Что в итоге умеет KadrGram:</h3>
+                <ul class="modal-features-list">
+                    <li>⚡ **Быстрый обмен сообщениями**, пересылка картинок и файлов.</li>
+                    <li>✏️ **Полное управление текстом:** можно отвечать на сообщения (Reply), редактировать опечатки на лету или удалять их (вместо текста появится аккуратная плашка *«Сообщение удалено»*).</li>
+                    <li>👤 **Профили как в оригинале:** нажимаешь на шапку чата — и вылетает карточка собеседника. Прямо из базы данных на лету вытягивается аватарка, статус «О себе», дата регистрации и даже точный счетчик того, сколько сообщений этот человек отправил за всё время!</li>
+                    <li>📌 **Закрепление чатов (Pin)** — важные диалоги можно закинуть в самый верх списка.</li>
+                    <li>📱 **Полный адаптив** — мессенджер шикарно смотрится на мониторе ПК и идеально сидит в браузере смартфона (даже вырезы под фронталку на айфонах учитываются).</li>
+                </ul>
+
+                <p class="modal-tech-info">🛠 <strong>По технологиям под капотом:</strong> Python (Flask), NoSQL база данных MongoDB, чистый JavaScript для фоновых запросов и CSS для сочной верстки.</p>
+                
+                <div class="modal-links-group">
+                    <!-- Рабочая ссылка на запуск мессенджера вживую -->
+                    <a href="https://kadrgram1.onrender.com" target="_blank" class="btn-primary">👉 Тестировать вживую</a>
+                    <a href="https://github.com" target="_blank" class="btn-project-link">Открыть репозиторий GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Стеклянный Прайс-лист -->
+    <section class="calculator-section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Прайс-лист и расчет стоимости</h2>
+            
+            <div class="calc-box glass-card">
+                <div class="discount-badge">-25% СКИДКА ЗА ОТЗЫВ</div>
+
+                <div class="calc-options">
+                    <label class="calc-option">
+                        <input type="radio" name="project-type" value="4900" checked>
+                        <span>🌐 Одностраничный сайт / Лендинг (от 4 900 ₽)</span>
+                    </label>
+                    <label class="calc-option">
+                        <input type="radio" name="project-type" value="5900">
+                        <span>📄 Сайт-визитка / Корпоративный сайт (от 5 900 ₽)</span>
+                    </label>
+                    <label class="calc-option">
+                        <input type="radio" name="project-type" value="6000">
+                        <span>🛒 Сайт-каталог / Интернет-магазин (от 6 000 ₽)</span>
+                    </label>
+                    <label class="calc-option">
+                        <input type="radio" name="project-type" value="3900">
+                        <span>🤖 Умный бот в ТГ / Бот в Макс (от 3 900 ₽)</span>
+                    </label>
+                    <label class="calc-option">
+                        <input type="radio" name="project-type" value="1900">
+                        <span>📊 Автоматический парсинг данных (от 1 900 ₽)</span>
+                    </label>
+                </div>
+
+                <div class="calc-result">
+                    <div class="price-title">Итоговая стоимость:</div>
+                    <div class="price-value"><span id="total-price">4 900</span> ₽</div>
+                    <p class="gift-notice">🎁 Бонус в подарок:</p>
+                    <p class="gift-text">🔒 7 дней технической поддержки + Хостинг или домен бесплатно!</p>
+                    <a href="#contact" class="btn-primary calc-btn">Заказать проект</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Обо мне и Контакты (Финальный блок сайта) -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-box glass-card">
+                <h2>Обо мне</h2>
+                <p class="about-text">Привет! Меня зовут Кадралиев Оятулло. Я занимаюсь профессиональной разработкой сайтов, Telegram-ботов и веб-приложений. Создаю проекты с нуля на чистом коде и постоянно развиваю свои навыки в программировании, чтобы давать бизнесу лучшие решения.</p>
+                
+                <div class="contact-info">
+                    <p>📞 Телефон: <a href="tel:+79275763361" class="neon-link">+7 (927) 576-33-61</a></p>
+                    <p>💬 Пишите мне в: <span class="blue-text">Telegram / WhatsApp / Max.</span></p>
+                </div>
+
+                <form id="tg-form" style="margin-top: 30px;">
+                    <div class="input-group">
+                        <input type="text" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" placeholder="Телефон или Ваш Telegram" required>
+                    </div>
+                    <button type="submit" class="btn-primary submit-btn">Запустить разработку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

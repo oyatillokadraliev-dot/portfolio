@@ -1,0 +1,487 @@
+:root {
+    --bg: #060913; 
+    --glass-bg: rgba(255, 255, 255, 0.03); 
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --blue-accent: #00d2ff; 
+    --blue-deep: #0066ff; 
+    --text: #f5f5f7;
+    --text-muted: #8da2bb;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.background-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 210, 255, 0.12) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+    filter: blur(50px);
+}
+.bg-glow-1 { top: -100px; right: -100px; }
+.bg-glow-2 { top: 800px; left: -200px; }
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-radius: 20px;
+}
+
+/* Навигация */
+.navbar {
+    background: rgba(6, 9, 19, 0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo { font-weight: 800; font-size: 20px; letter-spacing: 1px; }
+.logo .dot { color: var(--blue-accent); text-shadow: 0 0 10px var(--blue-accent); }
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover { color: var(--text); }
+
+.nav-links .btn-nav {
+    border: 1px solid var(--blue-accent);
+    padding: 8px 18px;
+    border-radius: 20px;
+    color: var(--blue-accent);
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+}
+
+/* Главный экран */
+.hero { padding: 160px 0 60px 0; text-align: center; }
+
+.hero-badge {
+    background: rgba(0, 210, 255, 0.1);
+    color: var(--blue-accent);
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+.hero h1 { font-size: 48px; font-weight: 800; max-width: 800px; margin: 0 auto 25px auto; line-height: 1.2; }
+.gradient-text {
+    background: linear-gradient(135deg, var(--blue-accent) 0%, var(--blue-deep) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle { color: var(--text-muted); font-size: 18px; max-width: 650px; margin: 0 auto 40px auto; line-height: 1.6; }
+
+.tech-stack span {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    margin: 5px;
+    display: inline-block;
+    color: var(--text-muted);
+}
+
+.hero-buttons { margin-top: 40px; display: flex; justify-content: center; align-items: center; gap: 20px; }
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--blue-accent) 0%, var(--blue-deep) 100%);
+    color: #000;
+    font-weight: 700;
+    padding: 16px 36px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: none;
+    cursor: pointer;
+}
+.btn-primary:hover { box-shadow: 0 0 25px rgba(0, 210, 255, 0.5); transform: translateY(-2px); }
+
+.btn-secondary { color: var(--text); text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+.btn-secondary:hover { color: var(--blue-accent); }
+
+/* Блок бизнес-решений */
+.business-solutions { padding: 40px 0; }
+.solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
+.solution-card { padding: 40px 30px; text-align: left; transition: all 0.3s ease; }
+.solution-card:hover { border-color: rgba(0, 210, 255, 0.2); box-shadow: 0 8px 24px rgba(0,210,255,0.05); }
+.solution-icon { font-size: 36px; margin-bottom: 20px; }
+.solution-card h3 { margin: 0 0 15px 0; font-size: 22px; color: #fff; }
+.solution-card p { color: var(--text-muted); font-size: 15px; line-height: 1.6; margin: 0; }
+
+/* Сетка проектов */
+.section-title { font-size: 32px; text-align: center; margin-top: 60px; margin-bottom: 40px; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.project-card { overflow: hidden; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
+.project-card:hover {
+    border-color: rgba(0, 210, 255, 0.4);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px 0 rgba(0, 210, 255, 0.1);
+}
+
+/* Базовый контейнер для картинок на главной странице */
+.card-image-container {
+    height: 220px; /* Немного приподняли высоту карточек на главном экране */
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--glass-border);
+    background: #060913;
+}
+
+/* КРУПНЫЙ СЛАЙДЕР ВНУТРИ МОДАЛЬНОГО ОКНА */
+.modal-window .card-image-container {
+    height: 420px; /* Увеличили высоту скриншотов в модальном окне почти в 2 раза! */
+    border-radius: 24px 24px 0 0; /* Округляем верхние углы картинки под модалку */
+}
+
+/* Настройка отображения самих скриншотов внутри модалки */
+.modal-window .project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Картинка полностью помещается в окно без обрезки краев */
+    background: #090d1a; /* Красивый глубокий фон по бокам, если скриншот узкий */
+}
+
+/* Адаптация размеров слайдера под мобильные телефоны */
+@media (max-width: 768px) {
+    .modal-window .card-image-container {
+        height: 250px; /* На смартфонах уменьшаем высоту, чтобы помещался и текст */
+    }
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.project-card:hover .project-img { transform: scale(1.06); }
+
+.card-content { padding: 25px; }
+.card-content h3 { margin: 0 0 12px 0; font-size: 22px; }
+.card-content p { color: var(--text-muted); font-size: 14px; line-height: 1.5; margin-bottom: 20px; }
+
+.card-tags span {
+    font-size: 11px;
+    background: rgba(0, 210, 255, 0.08);
+    border: 1px solid rgba(0, 210, 255, 0.15);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-right: 6px;
+    color: var(--blue-accent);
+}
+
+.btn-project {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--glass-border);
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+.btn-project:hover { border-color: var(--blue-accent); color: var(--blue-accent); background: rgba(0, 210, 255, 0.05); }
+
+/* Калькулятор стоимости */
+.calc-box { position: relative; padding: 50px 40px 40px 40px; display: flex; justify-content: space-between; gap: 40px; margin-top: 50px; }
+.discount-badge {
+    position: absolute;
+    top: -15px;
+    left: 30px;
+    background: linear-gradient(135deg, #00d2ff 0%, #0066ff 100%);
+    color: #000;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
+    letter-spacing: 0.5px;
+}
+
+.calc-options { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+
+/* УБИРАЕМ КРУЖКИ ИЗ СКРИНШОТА */
+.calc-option input[type="radio"] {
+    display: none; /* Полностью скрывает белые кружочки браузера */
+}
+
+.calc-option {
+    display: block;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--glass-border);
+    padding: 18px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Эффект свечения плашки при выборе (когда радиокнопка внутри активна) */
+.calc-option:has(input[type="radio"]:checked) {
+    border-color: var(--blue-accent);
+    background: rgba(0, 210, 255, 0.04);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.1);
+}
+
+.calc-option:hover { border-color: rgba(0, 210, 255, 0.3); background: rgba(0, 210, 255, 0.02); }
+
+.calc-result {
+    width: 320px;
+    background: rgba(6, 9, 19, 0.4);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--glass-border);
+}
+
+.price-title { color: var(--text-muted); font-size: 13px; }
+.price-value { font-size: 38px; font-weight: 800; color: var(--blue-accent); margin: 10px 0; text-shadow: 0 0 15px rgba(0,210,255,0.3); }
+.gift-notice { color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 5px; }
+.gift-text { font-size: 12.5px; color: var(--blue-accent); line-height: 1.4; margin: 0; font-weight: 500; }
+
+/* Обо мне и Контакты */
+.contact-box { padding: 50px; text-align: center; max-width: 750px; margin: 60px auto; }
+.about-text { color: var(--text-muted); font-size: 15px; line-height: 1.6; margin-bottom: 30px; }
+.contact-info { font-size: 16px; margin-bottom: 20px; }
+.blue-text, .neon-text { color: var(--blue-accent); font-weight: 600; }
+
+.neon-link { color: var(--blue-accent); text-decoration: none; font-weight: bold; transition: text-shadow 0.3s ease; }
+.neon-link:hover { text-shadow: 0 0 10px var(--blue-accent); }
+
+form { display: flex; flex-direction: column; gap: 12px; max-width: 400px; margin: 0 auto; }
+input {
+    width: 100%;
+    background: rgba(6, 9, 19, 0.5);
+    border: 1px solid var(--glass-border);
+    padding: 16px 20px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+input:focus { outline: none; border-color: var(--blue-accent); box-shadow: 0 0 15px rgba(0, 210, 255, 0.15); }
+
+/* Адаптация под телефоны */
+@media (max-width: 768px) {
+    .container { width: 88%; }
+    .nav-links { display: none; } 
+    .hero { padding: 120px 0 40px 0; }
+    .hero h1 { font-size: 32px; }
+    .subtitle { font-size: 15px; }
+    .hero-buttons { flex-direction: column; gap: 15px; }
+    .btn-primary { width: 100%; text-align: center; padding: 14px; }
+    
+    .solutions-grid, .projects-grid { grid-template-columns: 1fr; } 
+    
+    .calc-box { flex-direction: column; padding: 40px 20px 20px 20px; gap: 25px; }
+    .discount-badge { left: 20px; }
+    .calc-result { width: 100%; padding: 20px; }
+    
+    .contact-box { padding: 30px 20px; }
+}
+/* Стили для интерактивного слайдера */
+.slider-container {
+    position: relative;
+}
+
+.slider-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slider-track .project-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Активная картинка становится видимой */
+.slider-track .project-img.active {
+    opacity: 1;
+    position: relative; /* Чтобы контейнер держал высоту */
+}
+
+/* Стеклянные премиум-стрелочки */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(6, 9, 19, 0.6);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--text);
+    font-size: 22px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.slider-btn:hover {
+    background: var(--blue-accent);
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
+    border-color: var(--blue-accent);
+}
+
+.prev-btn { left: 15px; padding-right: 2px; }
+.next-btn { right: 15px; padding-left: 2px; }
+
+/* Отключаем конфликт эффекта hover карточки со стрелками */
+.project-card:hover .slider-btn {
+    opacity: 1;
+}
+/* Выравнивание двух кнопок в ряд */
+.card-buttons-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.card-buttons-group .btn-project {
+    flex: 1; /* Кнопки делят место поровну */
+    margin-top: 0;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Акцент на кнопку подробнее */
+.btn-more {
+    border-color: rgba(0, 210, 255, 0.2);
+    background: rgba(0, 210, 255, 0.03);
+}
+.btn-more:hover {
+    background: rgba(0, 210, 255, 0.08) !important;
+}
+
+/* Стили модальных окон (Всплывающие окна) */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(3, 5, 10, 0.75);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-window {
+    width: 100%;
+    max-width: 680px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    border-radius: 24px;
+    animation: modalSlideUp 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes modalSlideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px; right: 15px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--glass-border);
+    color: #fff; font-size: 28px; width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; cursor: pointer; z-index: 100;
+    transition: 0.3s;
+}
+.modal-close:hover { background: rgba(255,0,0,0.2); border-color: rgba(255,0,0,0.3); }
+
+.modal-text-content { padding: 35px; text-align: left; }
+.modal-text-content h2 { margin: 0 0 10px 0; font-size: 28px; }
+.modal-desc-title { color: var(--blue-accent); font-weight: 600; font-size: 16.5px; margin-bottom: 20px; }
+.modal-features-list { padding-left: 20px; margin-bottom: 25px; }
+.modal-features-list li { color: var(--text-muted); margin-bottom: 12px; font-size: 14.5px; line-height: 1.6; }
+.modal-tech-info { border-top: 1px solid var(--glass-border); padding-top: 20px; color: var(--text); font-size: 14.5px; line-height: 1.5; }
+
+.modal-links-group { display: flex; gap: 15px; margin-top: 35px; align-items: center; }
+.btn-project-link {
+    text-decoration: none; color: #fff; font-weight: 600; font-size: 15px;
+    border: 1px solid var(--glass-border); padding: 15px 25px; border-radius: 30px;
+    transition: 0.3s; background: rgba(255,255,255,0.01);
+}
+.btn-project-link:hover { border-color: var(--blue-accent); color: var(--blue-accent); }
+
+.modal-window::-webkit-scrollbar { width: 6px; }
+.modal-window::-webkit-scrollbar-thumb { background: var(--glass-border); border-radius: 10px; }
+
+/* Адаптация под телефоны */
+@media (max-width: 768px) {
+    .card-buttons-group { flex-direction: column; gap: 8px; }
+    .modal-text-content { padding: 25px 20px; }
+    .modal-links-group { flex-direction: column; width: 100%; gap: 12px; }
+    .modal-links-group a { width: 100%; text-align: center; }
+}
