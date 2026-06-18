@@ -60,7 +60,9 @@
         </div>
     </section>
 
-          <!-- Блок проектов с точными ссылками -->
+       
+
+             <!-- Блок проектов -->
     <section class="projects" id="projects">
         <div class="container">
             <h2 class="section-title">Реализованные кейсы</h2>
@@ -84,26 +86,21 @@
                     </div>
                 </div>
 
-                <!-- Карточка 2: Сайт рецептов (С привязанной ссылкой GitHub) -->
-                    <div class="card-image-container slider-container" id="slider-cookbook">
-                        <div class="slider-track">
-                            <!-- Подключены ваши 3 реальных скриншота (замените .png на .jpg, если нужно) -->
-                            <img src="cookbook1.png" alt="Интерфейс CookBook 1" class="project-img active">
-                            <img src="cookbook2.png" alt="Интерфейс CookBook 2" class="project-img">
-                            <img src="cookbook3.png" alt="Интерфейс CookBook 3" class="project-img">
-                        </div>
-                        <button class="slider-btn prev-btn">‹</button>
-                        <button class="slider-btn next-btn">›</button>
+                <!-- Карточка 2: Сайт рецептов (ИСПРАВЛЕНО: Теперь это одна цельная карточка) -->
+                <div class="project-card glass-card">
+                    <div class="card-image-container">
+                        <!-- На главной странице просто статичная красивая обложка без стрелок -->
+                        <img src="cookbook1.png" alt="CookBook" class="project-img">
                         <div class="project-status">PRODUCTION</div>
                     </div>
-                    <div class="container-card-content card-content">
+                    <div class="card-content">
                         <h3>🍔 Сайт рецептов</h3>
                         <p>Информационный веб-каталог рецептов, поиск блюд, полностью адаптивный дизайн под смартфоны.</p>
                         <div class="card-tags"><span>HTML5 / CSS3</span><span>JS ES6+</span></div>
                         
                         <div class="card-buttons-group">
-                            <!-- Ссылка на ваш репозиторий CookBook -->
-                            <a href="https://github.com/oyatillokadraliev-dot/CookBook" target="_blank" class="btn-project">GitHub</a>
+                            <a href="https://github.com" target="_blank" class="btn-project">GitHub</a>
+                            <!-- ИСПРАВЛЕНО: Кнопка теперь привязана к модалке рецептов -->
                             <button class="btn-project btn-more" onclick="openModal('modal-cookbook')">Подробнее</button>
                         </div>
                     </div>
@@ -146,16 +143,47 @@
                 <p class="modal-tech-info">🛠 <strong>По технологиям под капотом:</strong> Python (Flask), NoSQL база данных MongoDB, чистый JavaScript для фоновых запросов и CSS для сочной верстки.</p>
                 
                 <div class="modal-links-group">
-                    <!-- Рабочая ссылка на запуск мессенджера вживую -->
-                    <a href="https://kadrgram1.onrender.com" target="_blank" class="btn-primary">👉 Тестировать вживую</a>
+                    <a href="https://onrender.com" target="_blank" class="btn-primary">👉 Тестировать вживую</a>
                     <a href="https://github.com" target="_blank" class="btn-project-link">Открыть репозиторий GitHub</a>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ COOKBOOK (ИСПРАВЛЕНО: Слайдер со стрелками теперь перенесен СЮДА) -->
+    <div id="modal-cookbook" class="modal-overlay" onclick="closeModal('modal-cookbook')">
+        <div class="modal-window glass-card" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal('modal-cookbook')">&times;</button>
+            
+            <div class="card-image-container slider-container" id="slider-cookbook">
+                <div class="slider-track">
+                    <img src="cookbook1.png" alt="Интерфейс CookBook 1" class="project-img active">
+                    <img src="cookbook2.png" alt="Интерфейс CookBook 2" class="project-img">
+                    <img src="cookbook3.png" alt="Интерфейс CookBook 3" class="project-img">
+                </div>
+                <button class="slider-btn prev-btn">‹</button>
+                <button class="slider-btn next-btn">›</button>
+            </div>
 
-
+            <div class="modal-text-content">
+                <h2>🍔 Сайт рецептов (CookBook)</h2>
+                <p class="modal-desc-title">Удобный кулинарный каталог с умным поиском</p>
+                <p>Проект представляет собой структурированную базу данных рецептов с адаптивным и отзывчивым интерфейсом для любых типов экранов. Полностью переписан на чистый, оптимизированный фронтенд для быстрой загрузки.</p>
+                
+                <h3>Ключевые особенности:</h3>
+                <ul class="modal-features-list">
+                    <li>🔍 Мгновенная фильтрация и умный поиск блюд по категориям и названиям.</li>
+                    <li>📱 Идеологически правильный адаптивный дизайн под смартфоны и планшеты (Flexbox / Grid).</li>
+                    <li>📂 Чистая архитектура папок, отсутствие лишнего серверного оверхеда.</li>
+                </ul>
+                
+                <div class="modal-links-group" style="margin-top: 30px;">
+                    <a href="https://github.io" target="_blank" class="btn-primary">👉 Открыть сайт вживую</a>
+                    <a href="https://github.com" target="_blank" class="btn-project-link">Открыть репозиторий GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Стеклянный Прайс-лист -->
     <section class="calculator-section" id="pricing">
         <div class="container">
@@ -218,9 +246,9 @@
                         <input type="tel" placeholder="Телефон или Ваш Telegram" required>
                     </div>
                     <div class="input-group">
-                        <input type="text" placeholder="Краткое описание того , что вам нужно" required>
+                        <input type="text" placeholder="Краткое описание проекта" required>
                     </div>
-                    <button type="submit" class="btn-primary submit-btn">Запустить разработку</button>
+                    <button type="submit" class="btn-primary submit-btn">Отправить заявку</button>
                 </form>
             </div>
         </div>
