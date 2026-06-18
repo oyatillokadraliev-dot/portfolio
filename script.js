@@ -117,6 +117,38 @@ function closeModal(modalId) {
         document.body.style.overflow = '';
     }
 }
+// Функция инициализации независимых слайдеров внутри модальных окон
+function initCardSlider(sliderId) {
+    const container = document.getElementById(sliderId);
+    if (!container) return;
+
+    const prevBtn = container.querySelector('.prev-btn');
+    const nextBtn = container.querySelector('.next-btn');
+    const images = container.querySelectorAll('.slider-track .project-img');
+    let activeIndex = 0;
+
+    function changeImage(nextIndex) {
+        images[activeIndex].classList.remove('active');
+        activeIndex = (nextIndex + images.length) % images.length;
+        images[activeIndex].classList.add('active');
+    }
+
+    if (nextBtn && prevBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Не закрываем модалку при клике на стрелку
+            changeImage(activeIndex + 1);
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            changeImage(activeIndex - 1);
+        });
+    }
+}
+
+// Запускаем слайдеры для обоих модальных окон
+initCardSlider('slider-kadrgram');
+initCardSlider('slider-cookbook');
 
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
