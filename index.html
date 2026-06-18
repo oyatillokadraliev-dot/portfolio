@@ -31,7 +31,7 @@
             <h1>Али — <span class="gradient-text">разработчик сайтов</span> и Telegram-ботов</h1>
             <p class="subtitle">Создаю сайты, ботов и веб-приложения, которые помогают бизнесу привлекать клиентов и автоматизировать работу.</p>
             <div class="tech-stack">
-                <span>HTML5 / CSS3</span>
+                <span>HTML / CSS</span>
                 <span>JavaScript</span>
                 <span>Python</span>
             </div>
@@ -49,7 +49,7 @@
                 <div class="solution-card glass-card">
                     <div class="solution-icon">📈</div>
                     <h3>Сайты, которые поднимают продажи</h3>
-                    <p>Разработаю современный сайт, который увеличит продажи для вашего бизнеса: будь то уютная кофейня, ресторан, стоматология, автосервис, салон красоты или онлайн-магазин. Клиенты увидят ваши преимущества и сразу оставят заявку.</p>
+                    <p>Разработаю современный сайт, который увеличит продажи для вашего бизнеса: будь то уютная кофейня, ресторан, стоматология, автосервис, салон красоты или онлайн-магазин. Клиенты увидят ваши преимущества и сразу оставят заявку. Сайт будет высвечиваться при поиске в браузерах.</p>
                 </div>
                 <div class="solution-card glass-card">
                     <div class="solution-icon">🤖</div>
@@ -85,9 +85,15 @@
                 </div>
 
                 <!-- Карточка 2: Сайт рецептов (С привязанной ссылкой GitHub) -->
-                <div class="project-card glass-card">
-                    <div class="card-image-container">
-                        <img src="cookbook.jpg" alt="CookBook" class="project-img">
+                    <div class="card-image-container slider-container" id="slider-cookbook">
+                        <div class="slider-track">
+                            <!-- Подключены ваши 3 реальных скриншота (замените .png на .jpg, если нужно) -->
+                            <img src="cookbook1.png" alt="Интерфейс CookBook 1" class="project-img active">
+                            <img src="cookbook2.png" alt="Интерфейс CookBook 2" class="project-img">
+                            <img src="cookbook3.png" alt="Интерфейс CookBook 3" class="project-img">
+                        </div>
+                        <button class="slider-btn prev-btn">‹</button>
+                        <button class="slider-btn next-btn">›</button>
                         <div class="project-status">PRODUCTION</div>
                     </div>
                     <div class="container-card-content card-content">
@@ -185,7 +191,7 @@
                     <div class="price-title">Итоговая стоимость:</div>
                     <div class="price-value"><span id="total-price">4 900</span> ₽</div>
                     <p class="gift-notice">🎁 Бонус в подарок:</p>
-                    <p class="gift-text">🔒 7 дней технической поддержки + Хостинг или домен бесплатно!</p>
+                    <p class="gift-text"> 7 дней технической поддержки + Хостинг или домен бесплатно!</p>
                     <a href="#contact" class="btn-primary calc-btn">Заказать проект</a>
                 </div>
             </div>
@@ -197,11 +203,11 @@
         <div class="container">
             <div class="contact-box glass-card">
                 <h2>Обо мне</h2>
-                <p class="about-text">Привет! Меня зовут Кадралиев Оятулло. Я занимаюсь профессиональной разработкой сайтов, Telegram-ботов и веб-приложений. Создаю проекты с нуля на чистом коде и постоянно развиваю свои навыки в программировании, чтобы давать бизнесу лучшие решения.</p>
+                <p class="about-text">Привет! Меня зовут Кадралиев Оятулло , многие называют Али. Я занимаюсь профессиональной разработкой различных сайтов, Telegram-ботов, Max-ботов и веб-приложений. Создаю проекты с нуля на чистом коде и постоянно развиваю свои навыки в программировании, чтобы давать бизнесу лучшие решения. Помогу сделать сайт на любой ваш вкус и цвет. Помогу привлечь клиентов на ваш бизнес. Всегда буду с вами на связи.</p>
                 
                 <div class="contact-info">
                     <p>📞 Телефон: <a href="tel:+79275763361" class="neon-link">+7 (927) 576-33-61</a></p>
-                    <p>💬 Пишите мне в: <span class="blue-text">Telegram / WhatsApp / Max.</span></p>
+                    <p>💬 Пишите мне в: <span class="blue-text">Telegram / WhatsApp / Max 24/7.</span></p>
                 </div>
 
                 <form id="tg-form" style="margin-top: 30px;">
@@ -210,6 +216,9 @@
                     </div>
                     <div class="input-group">
                         <input type="tel" placeholder="Телефон или Ваш Telegram" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Краткое описание того , что вам нужно" required>
                     </div>
                     <button type="submit" class="btn-primary submit-btn">Запустить разработку</button>
                 </form>
