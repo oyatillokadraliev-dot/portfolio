@@ -14,68 +14,62 @@ function updateCalculatedPrice() {
     });
 
     if (totalPriceDisplay) {
-        // Форматируем число с разделением тысяч (например, 4 900)
         totalPriceDisplay.textContent = currentPrice.toLocaleString('ru-RU');
     }
 }
 
-// Навешиваем событие изменения на каждую плашку прайс-листа
 projectOptions.forEach(radio => radio.addEventListener('change', updateCalculatedPrice));
-
-// Вызываем функцию один раз при загрузке, чтобы отобразить стартовую цену (4 900)
 updateCalculatedPrice();
 
-// 3. Отправка формы на правильный и полный адрес бэкенда Flask
+// 3. Отправка заявки напрямую в Telegram API (без Flask)
 if (leadForm) {
     leadForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        
-        // Собираем имя и контакты клиента из полей ввода
+
         const clientName = this.querySelector('input[type="text"]').value;
         const clientPhone = this.querySelector('input[type="tel"]').value;
-        
+
         let projectTitle = "Не выбрано";
         projectOptions.forEach(radio => {
             if (radio.checked) {
-                // Извлекаем точный текст выбранной услуги из плашки
                 const spanText = radio.parentElement.querySelector('span');
                 if (spanText) projectTitle = spanText.textContent;
             }
         });
-        
+
         const finalCalculatedPrice = totalPriceDisplay ? totalPriceDisplay.textContent : "0";
-        
-const BACKEND_URL = 'http://127.0.0.1:5000/api/lead';
+
+        const TELEGRAM_TOKEN = "8677318219:AAFB8pYD0wQGBe8yF2zWlfAMC24UMat6Ma4";
+        const TELEGRAM_CHAT_ID = "1485466486";
+
+        const message = `🔥 Новая заявка с сайта!\n\n👤 Имя: ${clientName}\n📞 Контакты: ${clientPhone}\n🛠 Проект: ${projectTitle}\n💳 Цена: ${finalCalculatedPrice} ₽`;
 
         try {
-            const response = await fetch(BACKEND_URL, {
+            const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    name: clientName,
-                    phone: clientPhone,
-                    project_type: projectTitle,
-                    price: finalCalculatedPrice
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: message
                 })
             });
 
             const result = await response.json();
 
-            if (response.ok) {
-                alert('🚀 Успешно! Заявка улетела Али в Telegram. Скоро я свяжусь с вами!');
+            if (result.ok) {
+                alert('🚀 Успешно! Заявка улетела в Telegram. Скоро свяжусь с вами!');
                 this.reset();
+                updateCalculatedPrice();
             } else {
-                alert('Ошибка сервера Flask: ' + result.message);
+                alert('Ошибка Telegram: ' + result.description);
             }
         } catch (error) {
-            console.error('Ошибка отправки запроса на бэкенд:', error);
-            alert('Не удалось связаться со скрытым сервером. Пожалуйста, убедитесь, что в Терминале VS Code запущен Flask командой python app.py');
+            alert('Ошибка сети: ' + error.message);
         }
     });
 }
-// Функция инициализации независимых слайдеров на карточках
+
+// 4. Функция инициализации независимых слайдеров на карточках
 function initCardSlider(sliderId) {
     const container = document.getElementById(sliderId);
     if (!container) return;
@@ -93,7 +87,7 @@ function initCardSlider(sliderId) {
 
     if (nextBtn && prevBtn) {
         nextBtn.addEventListener('click', (e) => {
-            e.preventDefault(); // Предотвращаем переход по ссылкам карточки
+            e.preventDefault();
             changeImage(activeIndex + 1);
         });
 
@@ -104,15 +98,15 @@ function initCardSlider(sliderId) {
     }
 }
 
-// Запускаем слайдеры для обоих проектов
 initCardSlider('slider-kadrgram');
 initCardSlider('slider-cookbook');
-// Функции открытия и закрытия модальных окон
+
+// 5. Функции открытия и закрытия модальных окон
 function openModal(modalId) {
     const targetModal = document.getElementById(modalId);
     if (targetModal) {
         targetModal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Отключаем фоновый скролл
+        document.body.style.overflow = 'hidden';
     }
 }
 
@@ -120,11 +114,10 @@ function closeModal(modalId) {
     const targetModal = document.getElementById(modalId);
     if (targetModal) {
         targetModal.classList.remove('active');
-        document.body.style.overflow = ''; // Возвращаем скролл
+        document.body.style.overflow = '';
     }
 }
 
-// Закрытие модалки при нажатии на клавишу Escape
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         const openedModal = document.querySelector('.modal-overlay.active');
