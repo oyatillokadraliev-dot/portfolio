@@ -30,7 +30,7 @@ def handle_lead():
         )
 
         # Отправляем запрос в Telegram API
-        url = f"https://telegram.org{TELEGRAM_TOKEN}/sendMessage"
+        url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
         payload = {
             "chat_id": TELEGRAM_CHAT_ID,
             "text": message,
