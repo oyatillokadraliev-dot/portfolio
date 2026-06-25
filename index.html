@@ -83,10 +83,7 @@
                 <!-- Карточка: Астрегион30 — НОВЫЙ КОММЕРЧЕСКИЙ ЗАКАЗ -->
                 <div class="project-card glass-card project-featured">
                     <div class="card-image-container">
-                        <div class="project-img-placeholder">
-                            <span class="placeholder-icon">🚗</span>
-                            <span class="placeholder-text">astregion30.ru</span>
-                        </div>
+                       <img src="astregion1.png" alt="Астрегион30" class="project-img">
                         <div class="project-status status-commercial">КОММЕРЧЕСКИЙ</div>
                     </div>
                     <div class="card-content">
@@ -96,7 +93,7 @@
                             <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>SEO</span>
                         </div>
                         <div class="card-buttons-group">
-                            <a href="https://astregion30.ru" target="_blank" class="btn-project btn-live">Открыть сайт ↗</a>
+                            <a href="https://astregion30.ru" target="_blank" class="btn-project btn-live">Открыть сайт</a>
                             <button class="btn-project btn-more" onclick="openModal('modal-astregion')">Подробнее</button>
                         </div>
                     </div>
@@ -144,12 +141,15 @@
     <div id="modal-astregion" class="modal-overlay" onclick="closeModal('modal-astregion')">
         <div class="modal-window glass-card" onclick="event.stopPropagation()">
             <button class="modal-close" onclick="closeModal('modal-astregion')">&times;</button>
-            <div class="modal-hero-placeholder">
-                <span style="font-size:3.5rem">🚗</span>
-                <div>
-                    <div class="modal-live-badge status-commercial" style="display:inline-block;margin-bottom:8px">КОММЕРЧЕСКИЙ ЗАКАЗ</div>
-                    <div style="font-size:1.1rem;font-weight:600;color:#e2e8f0">astregion30.ru — заказчик оплатил ✓</div>
+            <div class="card-image-container slider-container" id="slider-astregion">
+                <div class="slider-track">
+                    <img src="astregion1.png" alt="Скриншот 1" class="project-img active">
+                    <img src="astregion2.png" alt="Скриншот 2" class="project-img">
+                    <img src="astregion3.png" alt="Скриншот 3" class="project-img">
+                    <img src="astregion4.png" alt="Скриншот 4" class="project-img">
                 </div>
+                <button class="slider-btn prev-btn">‹</button>
+                <button class="slider-btn next-btn">›</button>
             </div>
             <div class="modal-text-content">
                 <h2>🚗 Астрегион30 — Автосервис Астрахань</h2>
