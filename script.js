@@ -149,7 +149,7 @@ function initCardSlider(sliderId) {
 // Запускаем слайдеры для обоих модальных окон
 initCardSlider('slider-kadrgram');
 initCardSlider('slider-cookbook');
-
+initCardSlider('slider-astregion');
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         const openedModal = document.querySelector('.modal-overlay.active');
