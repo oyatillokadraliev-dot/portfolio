@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Али | Premium Web & Bot Development</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Синее неоновое свечение на фоне -->
     <div class="background-glow bg-glow-1"></div>
     <div class="background-glow bg-glow-2"></div>
 
@@ -21,19 +22,31 @@
                 <a href="#pricing">Цены</a>
                 <a href="#contact" class="btn-nav">Связаться</a>
             </div>
+            <button class="burger-btn" id="burgerBtn">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#projects" onclick="closeMobileNav()">Проекты</a>
+        <a href="#pricing" onclick="closeMobileNav()">Цены</a>
+        <a href="#contact" onclick="closeMobileNav()">Связаться</a>
+    </div>
 
     <!-- Главный экран -->
     <header class="hero">
         <div class="container hero-container">
-            <div class="hero-badge">Fullstack Developer</div>
-            <h1>Али — <span class="gradient-text">разработчик сайтов</span> и Telegram-ботов</h1>
+            <div class="hero-badge">
+                <span class="status-dot"></span> Fullstack Developer · Открыт к новым заказам
+            </div>
+            <h1>Али — <span class="gradient-text">разработчик сайтов</span><br>и Telegram-ботов</h1>
             <p class="subtitle">Создаю сайты, ботов и веб-приложения, которые помогают бизнесу привлекать клиентов и автоматизировать работу.</p>
             <div class="tech-stack">
                 <span>HTML / CSS</span>
                 <span>JavaScript</span>
                 <span>Python</span>
+                <span>Flask</span>
+                <span>MongoDB</span>
             </div>
             <div class="hero-buttons">
                 <a href="#projects" class="btn-primary">Посмотреть проекты</a>
@@ -49,26 +62,47 @@
                 <div class="solution-card glass-card">
                     <div class="solution-icon">📈</div>
                     <h3>Сайты, которые поднимают продажи</h3>
-                    <p>Разработаю современный сайт, который увеличит продажи для вашего бизнеса: будь то уютная кофейня, ресторан, стоматология, автосервис, салон красоты или онлайн-магазин. Клиенты увидят ваши преимущества и сразу оставят заявку. Сайт будет высвечиваться при поиске в браузерах.</p>
+                    <p>Разработаю современный сайт, который увеличит продажи для вашего бизнеса: кофейня, ресторан, стоматология, автосервис, салон красоты или онлайн-магазин. Сайт будет находить клиентов через поиск в Яндексе и Google.</p>
                 </div>
                 <div class="solution-card glass-card">
                     <div class="solution-icon">🤖</div>
                     <h3>Автоматизация процессов 24/7</h3>
-                    <p>Создам умного Telegram-бота, который принимает заявки вместо администратора 24 на 7, консультирует клиентов, рассчитывает стоимость услуг и моментально отправляет данные вам. Ни один клиент не будет упущен.</p>
+                    <p>Создам умного Telegram-бота, который принимает заявки вместо администратора круглосуточно, консультирует клиентов и моментально отправляет данные вам. Ни один клиент не будет упущен.</p>
                 </div>
             </div>
         </div>
     </section>
 
-       
-
-             <!-- Блок проектов -->
+    <!-- Проекты -->
     <section class="projects" id="projects">
         <div class="container">
+            <p class="section-label">Реальные результаты</p>
             <h2 class="section-title">Реализованные кейсы</h2>
             <div class="projects-grid">
-                
-                <!-- Карточка 1: KadrGram -->
+
+                <!-- Карточка: Астрегион30 — НОВЫЙ КОММЕРЧЕСКИЙ ЗАКАЗ -->
+                <div class="project-card glass-card project-featured">
+                    <div class="card-image-container">
+                        <div class="project-img-placeholder">
+                            <span class="placeholder-icon">🚗</span>
+                            <span class="placeholder-text">astregion30.ru</span>
+                        </div>
+                        <div class="project-status status-commercial">КОММЕРЧЕСКИЙ</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>🚗 Астрегион30 — Автосервис</h3>
+                        <p>Корпоративный сайт для автосервиса в Астрахани. SEO под регион, галерея сервиса, блок услуг, форма контактов. Уже виден в Яндексе.</p>
+                        <div class="card-tags">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>SEO</span>
+                        </div>
+                        <div class="card-buttons-group">
+                            <a href="https://astregion30.ru" target="_blank" class="btn-project btn-live">Открыть сайт ↗</a>
+                            <button class="btn-project btn-more" onclick="openModal('modal-astregion')">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка: KadrGram -->
                 <div class="project-card glass-card">
                     <div class="card-image-container">
                         <img src="kadrgram1.png" alt="KadrGram" class="project-img">
@@ -78,7 +112,6 @@
                         <h3>💬 KadrGram</h3>
                         <p>Собственный веб-мессенджер. Система аккаунтов, обмен сообщениями, кастомный real-time интерфейс.</p>
                         <div class="card-tags"><span>Python</span><span>Flask</span><span>MongoDB</span></div>
-                        
                         <div class="card-buttons-group">
                             <a href="https://github.com" target="_blank" class="btn-project">GitHub</a>
                             <button class="btn-project btn-more" onclick="openModal('modal-kadrgram')">Подробнее</button>
@@ -86,10 +119,9 @@
                     </div>
                 </div>
 
-                <!-- Карточка 2: Сайт рецептов (ИСПРАВЛЕНО: Теперь это одна цельная карточка) -->
+                <!-- Карточка: CookBook -->
                 <div class="project-card glass-card">
                     <div class="card-image-container">
-                        <!-- На главной странице просто статичная красивая обложка без стрелок -->
                         <img src="cookbook1.png" alt="CookBook" class="project-img">
                         <div class="project-status">PRODUCTION</div>
                     </div>
@@ -97,10 +129,8 @@
                         <h3>🍔 Сайт рецептов</h3>
                         <p>Информационный веб-каталог рецептов, поиск блюд, полностью адаптивный дизайн под смартфоны.</p>
                         <div class="card-tags"><span>HTML5 / CSS3</span><span>JS ES6+</span></div>
-                        
                         <div class="card-buttons-group">
                             <a href="https://github.com" target="_blank" class="btn-project">GitHub</a>
-                            <!-- ИСПРАВЛЕНО: Кнопка теперь привязана к модалке рецептов -->
                             <button class="btn-project btn-more" onclick="openModal('modal-cookbook')">Подробнее</button>
                         </div>
                     </div>
@@ -110,11 +140,46 @@
         </div>
     </section>
 
-    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ KADRGRAM -->
+    <!-- МОДАЛКА: АСТРЕГИОН30 -->
+    <div id="modal-astregion" class="modal-overlay" onclick="closeModal('modal-astregion')">
+        <div class="modal-window glass-card" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal('modal-astregion')">&times;</button>
+            <div class="modal-hero-placeholder">
+                <span style="font-size:3.5rem">🚗</span>
+                <div>
+                    <div class="modal-live-badge status-commercial" style="display:inline-block;margin-bottom:8px">КОММЕРЧЕСКИЙ ЗАКАЗ</div>
+                    <div style="font-size:1.1rem;font-weight:600;color:#e2e8f0">astregion30.ru — заказчик оплатил ✓</div>
+                </div>
+            </div>
+            <div class="modal-text-content">
+                <h2>🚗 Астрегион30 — Автосервис Астрахань</h2>
+                <p class="modal-desc-title">Корпоративный сайт для автосервиса в Кировском районе Астрахани</p>
+                <p>Заказчик хотел сайт, который находят через Яндекс и Google по запросам «заправка кондиционеров Астрахань», «автосервис Астрахань». Сделал полноценный SEO-лендинг с региональным продвижением.</p>
+                <h3>Что реализовано:</h3>
+                <ul class="modal-features-list">
+                    <li>🔍 Региональное SEO под Астрахань — title, description, ключевые слова, геотеги</li>
+                    <li>📋 Schema.org разметка AutoRepair — красивые сниппеты в поиске</li>
+                    <li>🖼 Галерея сервиса — 9 реальных фотографий</li>
+                    <li>🔧 6 карточек услуг с сезонным акцентом на кондиционеры</li>
+                    <li>🛡 Блок «100% Гарантия» и «Почему выбирают нас»</li>
+                    <li>📍 Контактный блок со статичной картой 2ГИС</li>
+                    <li>📱 Мобильная адаптация, бургер-меню, фиксированная кнопка звонка</li>
+                    <li>🌐 Подключение Яндекс.Вебмастер и Google Search Console</li>
+                    <li>🗺 sitemap.xml и robots.txt для быстрой индексации</li>
+                </ul>
+                <p class="modal-tech-info">🛠 <strong>Стек:</strong> HTML5, CSS3, JavaScript, Schema.org, sitemap.xml, Яндекс.Вебмастер, GSC</p>
+                <div class="modal-links-group">
+                    <a href="https://astregion30.ru" target="_blank" class="btn-primary">Открыть сайт ↗</a>
+                    <a href="https://github.com/oyatillokadraliev-dot/astregion30" target="_blank" class="btn-project-link">GitHub репозиторий</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- МОДАЛКА: KADRGRAM -->
     <div id="modal-kadrgram" class="modal-overlay" onclick="closeModal('modal-kadrgram')">
         <div class="modal-window glass-card" onclick="event.stopPropagation()">
             <button class="modal-close" onclick="closeModal('modal-kadrgram')">&times;</button>
-            
             <div class="card-image-container slider-container" id="slider-kadrgram">
                 <div class="slider-track">
                     <img src="kadrgram1.png" alt="Скриншот 1" class="project-img active">
@@ -125,134 +190,158 @@
                 <button class="slider-btn prev-btn">‹</button>
                 <button class="slider-btn next-btn">›</button>
             </div>
-
             <div class="modal-text-content">
                 <h2>💬 KadrGram</h2>
-                <p class="modal-desc-title">Мой проект: собрал собственный Telegram на Python и Flask!</p>
-                <p>Решил не мелочиться и написать с нуля полноценный веб-мессенджер, который назвал KadrGram. Главная цель была — сделать интерфейс максимально близким к оригиналу, быстрым и без унылых перезагрузок страниц при каждом клике.</p>
-                
-                <h3>Что в итоге умеет KadrGram:</h3>
+                <p class="modal-desc-title">Собственный Telegram на Python и Flask — написан с нуля</p>
+                <p>Главная цель — сделать интерфейс максимально близким к оригиналу, быстрым и без перезагрузок страниц при каждом клике.</p>
+                <h3>Что умеет KadrGram:</h3>
                 <ul class="modal-features-list">
-                    <li>⚡ **Быстрый обмен сообщениями**, пересылка картинок и файлов.</li>
-                    <li>✏️ **Полное управление текстом:** можно отвечать на сообщения (Reply), редактировать опечатки на лету или удалять их (вместо текста появится аккуратная плашка *«Сообщение удалено»*).</li>
-                    <li>👤 **Профили как в оригинале:** нажимаешь на шапку чата — и вылетает карточка собеседника. Прямо из базы данных на лету вытягивается аватарка, статус «О себе», дата регистрации и даже точный счетчик того, сколько сообщений этот человек отправил за всё время!</li>
-                    <li>📌 **Закрепление чатов (Pin)** — важные диалоги можно закинуть в самый верх списка.</li>
-                    <li>📱 **Полный адаптив** — мессенджер шикарно смотрится на мониторе ПК и идеально сидит в браузере смартфона (даже вырезы под фронталку на айфонах учитываются).</li>
+                    <li>⚡ Быстрый обмен сообщениями, пересылка картинок и файлов</li>
+                    <li>✏️ Reply, редактирование и удаление сообщений на лету</li>
+                    <li>👤 Профили: аватарка, статус «О себе», дата регистрации, счётчик сообщений</li>
+                    <li>📌 Закрепление чатов (Pin) — важные диалоги в начало списка</li>
+                    <li>📱 Полный адаптив, в том числе вырезы на iPhone</li>
                 </ul>
-
-                <p class="modal-tech-info">🛠 <strong>По технологиям под капотом:</strong> Python (Flask), NoSQL база данных MongoDB, чистый JavaScript для фоновых запросов и CSS для сочной верстки.</p>
-                
+                <p class="modal-tech-info">🛠 <strong>Стек:</strong> Python (Flask), MongoDB, JavaScript, CSS</p>
                 <div class="modal-links-group">
                     <a href="https://onrender.com" target="_blank" class="btn-primary">Открыть сайт вживую</a>
-                    <a href="https://github.com" target="_blank" class="btn-project-link">Открыть репозиторий GitHub</a>
+                    <a href="https://github.com" target="_blank" class="btn-project-link">GitHub репозиторий</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ COOKBOOK (ИСПРАВЛЕНО: Слайдер со стрелками теперь перенесен СЮДА) -->
+    <!-- МОДАЛКА: COOKBOOK -->
     <div id="modal-cookbook" class="modal-overlay" onclick="closeModal('modal-cookbook')">
         <div class="modal-window glass-card" onclick="event.stopPropagation()">
             <button class="modal-close" onclick="closeModal('modal-cookbook')">&times;</button>
-            
             <div class="card-image-container slider-container" id="slider-cookbook">
                 <div class="slider-track">
-                    <img src="cookbook1.png" alt="Интерфейс CookBook 1" class="project-img active">
-                    <img src="cookbook2.png" alt="Интерфейс CookBook 2" class="project-img">
-                    <img src="cookbook3.png" alt="Интерфейс CookBook 3" class="project-img">
+                    <img src="cookbook1.png" alt="CookBook 1" class="project-img active">
+                    <img src="cookbook2.png" alt="CookBook 2" class="project-img">
+                    <img src="cookbook3.png" alt="CookBook 3" class="project-img">
                 </div>
                 <button class="slider-btn prev-btn">‹</button>
                 <button class="slider-btn next-btn">›</button>
             </div>
-
             <div class="modal-text-content">
                 <h2>🍔 Сайт рецептов (CookBook)</h2>
                 <p class="modal-desc-title">Удобный кулинарный каталог с умным поиском</p>
-                <p>Проект представляет собой структурированную базу данных рецептов с адаптивным и отзывчивым интерфейсом для любых типов экранов. Полностью переписан на чистый, оптимизированный фронтенд для быстрой загрузки.</p>
-                
-                <h3>Ключевые особенности:</h3>
+                <p>Структурированная база данных рецептов с адаптивным интерфейсом. Переписан на чистый фронтенд для быстрой загрузки.</p>
                 <ul class="modal-features-list">
-                    <li>🔍 Мгновенная фильтрация и умный поиск блюд по категориям и названиям.</li>
-                    <li>📱 Идеологически правильный адаптивный дизайн под смартфоны и планшеты (Flexbox / Grid).</li>
-                    <li>📂 Чистая архитектура папок, отсутствие лишнего серверного оверхеда.</li>
+                    <li>🔍 Мгновенная фильтрация и поиск по категориям и названиям</li>
+                    <li>📱 Адаптивный дизайн под смартфоны и планшеты (Flexbox / Grid)</li>
+                    <li>📂 Чистая архитектура без лишнего серверного оверхеда</li>
                 </ul>
-                
-                <div class="modal-links-group" style="margin-top: 30px;">
+                <div class="modal-links-group" style="margin-top:30px">
                     <a href="https://oyatillokadraliev-dot.github.io/CookBook/" target="_blank" class="btn-primary">Открыть сайт вживую</a>
-                    <a href="https://github.com" target="_blank" class="btn-project-link">Открыть репозиторий GitHub</a>
+                    <a href="https://github.com" target="_blank" class="btn-project-link">GitHub репозиторий</a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Стеклянный Прайс-лист -->
+
+    <!-- Прайс-лист -->
     <section class="calculator-section" id="pricing">
         <div class="container">
-            <h2 class="section-title">Прайс-лист и расчет стоимости</h2>
-            
+            <p class="section-label">Прозрачные цены</p>
+            <h2 class="section-title">Прайс-лист и расчёт стоимости</h2>
             <div class="calc-box glass-card">
-                <div class="discount-badge">-25% СКИДКА ЗА ОТЗЫВ</div>
-
+                <div class="discount-badge">−25% СКИДКА ЗА ОТЗЫВ</div>
                 <div class="calc-options">
                     <label class="calc-option">
                         <input type="radio" name="project-type" value="4900" checked>
-                        <span>🌐 Одностраничный сайт / Лендинг (от 4 900 ₽)</span>
+                        <span>🌐 Одностраничный сайт / Лендинг <em>от 4 900 ₽</em></span>
                     </label>
                     <label class="calc-option">
                         <input type="radio" name="project-type" value="5900">
-                        <span>📄 Сайт-визитка / Корпоративный сайт (от 5 900 ₽)</span>
+                        <span>📄 Сайт-визитка / Корпоративный сайт <em>от 5 900 ₽</em></span>
                     </label>
                     <label class="calc-option">
                         <input type="radio" name="project-type" value="6000">
-                        <span>🛒 Сайт-каталог / Интернет-магазин (от 6 000 ₽)</span>
+                        <span>🛒 Сайт-каталог / Интернет-магазин <em>от 6 000 ₽</em></span>
                     </label>
                     <label class="calc-option">
                         <input type="radio" name="project-type" value="3900">
-                        <span>🤖 Умный бот в ТГ / Бот в Макс (от 3 900 ₽)</span>
+                        <span>🤖 Умный бот в ТГ / Бот в Макс <em>от 3 900 ₽</em></span>
                     </label>
                     <label class="calc-option">
                         <input type="radio" name="project-type" value="1900">
-                        <span>📊 Автоматический парсинг данных (от 1 900 ₽)</span>
+                        <span>📊 Автоматический парсинг данных <em>от 1 900 ₽</em></span>
                     </label>
                 </div>
-
                 <div class="calc-result">
                     <div class="price-title">Итоговая стоимость:</div>
                     <div class="price-value"><span id="total-price">4 900</span> ₽</div>
                     <p class="gift-notice">🎁 Бонус в подарок:</p>
-                    <p class="gift-text"> 7 дней технической поддержки + Хостинг или домен бесплатно!</p>
+                    <p class="gift-text">7 дней технической поддержки + Хостинг или домен бесплатно!</p>
                     <a href="#contact" class="btn-primary calc-btn">Заказать проект</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Обо мне и Контакты (Финальный блок сайта) -->
+    <!-- Обо мне + Контакты -->
     <section class="contact" id="contact">
         <div class="container">
+            <p class="section-label">Кто я</p>
+            <h2 class="section-title">Обо мне</h2>
             <div class="contact-box glass-card">
-                <h2>Обо мне</h2>
-                <p class="about-text">Привет! Меня зовут Кадралиев Оятулло , многие называют Али. Я занимаюсь профессиональной разработкой различных сайтов, Telegram-ботов, Max-ботов и веб-приложений. Создаю проекты с нуля на чистом коде и постоянно развиваю свои навыки в программировании, чтобы давать бизнесу лучшие решения. Помогу сделать сайт на любой ваш вкус и цвет. Помогу привлечь клиентов на ваш бизнес. Всегда буду с вами на связи.</p>
-                
-                <div class="contact-info">
-                    <p>📞 Телефон: <a href="tel:+79275763361" class="neon-link">+7 (927) 576-33-61</a></p>
-                    <p>💬 Пишите мне в: <span class="blue-text">Telegram / WhatsApp / Max 24/7.</span></p>
+                <div class="about-grid">
+                    <div class="about-avatar-wrap">
+                        <div class="about-avatar">👨‍💻</div>
+                        <div class="about-name">Кадралиев Оятулло</div>
+                        <div class="about-role">Fullstack Developer · Али</div>
+                    </div>
+                    <div class="about-right">
+                        <p class="about-text">Занимаюсь профессиональной разработкой сайтов, Telegram-ботов, Max-ботов и веб-приложений. Создаю проекты с нуля на чистом коде — без WordPress и конструкторов. Постоянно развиваю свои навыки, чтобы давать бизнесу лучшие решения. Помогу привлечь клиентов на ваш бизнес и всегда буду с вами на связи.</p>
+                        <div class="contact-info">
+                            <a href="tel:+79275763361" class="contact-row">
+                                <span class="contact-icon">📞</span>
+                                <span>+7 (927) 576-33-61</span>
+                            </a>
+                            <a href="https://t.me/oyatillo_k" target="_blank" class="contact-row">
+                                <span class="contact-icon">✈️</span>
+                                <span>Telegram — @oyatillo_k</span>
+                            </a>
+                            <div class="contact-row">
+                                <span class="contact-icon">💬</span>
+                                <span>WhatsApp / Max — 24/7</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <form id="tg-form" style="margin-top: 30px;">
-                    <div class="input-group">
-                        <input type="text" placeholder="Ваше имя" required>
+                <div class="form-divider"></div>
+
+                <h3 class="form-title">Отправить заявку</h3>
+                <form id="tg-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Ваше имя</label>
+                            <input type="text" placeholder="Иван Иванов" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Телефон или Telegram</label>
+                            <input type="tel" placeholder="+7 900 000-00-00" required>
+                        </div>
                     </div>
                     <div class="input-group">
-                        <input type="tel" placeholder="Телефон или Ваш Telegram" required>
+                        <label>Краткое описание проекта</label>
+                        <input type="text" placeholder="Нужен сайт для кофейни / бот для приёма заявок..." required>
                     </div>
-                    <div class="input-group">
-                        <input type="text" placeholder="Краткое описание проекта" required>
-                    </div>
-                    <button type="submit" class="btn-primary submit-btn">Отправить заявку</button>
+                    <button type="submit" class="btn-primary submit-btn">Отправить заявку →</button>
                 </form>
             </div>
         </div>
     </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <span class="footer-logo">ALI<span class="dot">.</span>DEV</span>
+            <span class="footer-copy">© 2026 Кадралиев Оятулло. Все права защищены.</span>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
