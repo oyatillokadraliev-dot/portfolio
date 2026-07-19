@@ -87,6 +87,25 @@
                     </div>
                 </div>
 
+                <!-- Карточка: Зоодвор — КОММЕРЧЕСКИЙ ЗАКАЗ -->
+                <div class="project-card glass-card project-featured">
+                    <div class="card-image-container">
+                          <img src="zoo1.png" alt="Зоодвор" class="project-img">
+                        <div class="project-status status-commercial">КОММЕРЧЕСКИЙ</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>🐾 Зоодвор — Зоомагазин</h3>
+                        <p>Интернет-магазин товаров для собак, кошек и грызунов в Астрахани. Каталог с категориями, корзина и оформление заказа прямо в WhatsApp.</p>
+                        <div class="card-tags">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>WhatsApp API</span>
+                        </div>
+                        <div class="card-buttons-group">
+                            <a href="https://oyatillokadraliev-dot.github.io/Zoo30/" target="_blank" class="btn-project btn-live">Открыть сайт ↗</a>
+                            <button class="btn-project btn-more" onclick="openModal('modal-zoo30')">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Карточка 1: KadrGram -->
                 <div class="project-card glass-card">
                     <div class="card-image-container">
@@ -161,6 +180,41 @@
                 <div class="modal-links-group">
                     <a href="https://astregion30.ru" target="_blank" class="btn-primary">Открыть сайт ↗</a>
                     <a href="https://github.com/oyatillokadraliev-dot/astregion30" target="_blank" class="btn-project-link">GitHub репозиторий</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- МОДАЛКА: ЗООДВОР -->
+    <div id="modal-zoo30" class="modal-overlay" onclick="closeModal('modal-zoo30')">
+        <div class="modal-window glass-card" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal('modal-zoo30')">&times;</button>
+            <div class="card-image-container slider-container" id="slider-zoo30">
+                <div class="slider-track">
+                    <img src="zoo1.png" alt="Скриншот 1" class="project-img active">
+                    <img src="zoo2.png" alt="Скриншот 2" class="project-img">
+                    <img src="zoo3.png" alt="Скриншот 3" class="project-img">
+                </div>
+                <button class="slider-btn prev-btn">‹</button>
+                <button class="slider-btn next-btn">›</button>
+            </div>
+            <div class="modal-text-content">
+                <h2>🐾 Зоодвор — Зоомагазин Астрахань</h2>
+                <p class="modal-desc-title">Интернет-магазин товаров для животных с оформлением заказа в WhatsApp</p>
+                <p>Заказчику нужен был удобный каталог зоотоваров с корзиной, без сложной админки и лишних затрат на CMS — чтобы клиент мог быстро набрать заказ и оформить его в один клик через WhatsApp.</p>
+                <h3>Что реализовано:</h3>
+                <ul class="modal-features-list">
+                    <li>🛒 Корзина товаров с подсчётом суммы заказа в реальном времени</li>
+                    <li>🐶 Каталог по категориям — корм, амуниция, наполнители, товары для кошек, грызунов, птиц и аквариума</li>
+                    <li>💬 Оформление заказа одним нажатием — сразу в WhatsApp менеджеру</li>
+                    <li>🚚 Блок «Доставка и оплата» с условиями по Астрахани и самовывозом</li>
+                    <li>📍 Контакты, адрес и режим работы магазина</li>
+                    <li>📱 Полная адаптация под смартфоны</li>
+                </ul>
+                <p class="modal-tech-info">🛠 <strong>Стек:</strong> HTML5, CSS3, JavaScript, интеграция с WhatsApp API</p>
+                <div class="modal-links-group">
+                    <a href="https://oyatillokadraliev-dot.github.io/Zoo30/" target="_blank" class="btn-primary">Открыть сайт ↗</a>
+                    <a href="https://github.com/oyatillokadraliev-dot/Zoo30" target="_blank" class="btn-project-link">GitHub репозиторий</a>
                 </div>
             </div>
         </div>
@@ -447,11 +501,11 @@
                 <div class="calc-options">
                     <label class="calc-option">
                         <input type="radio" name="project-type" value="4900" checked>
-                        <span>🌐 Одностраничный сайт / Лендинг (от 4 900 ₽)</span>
+                        <span>🌐 Одностраничный сайт / Лендинг (от 4 100 ₽)</span>
                     </label>
                     <label class="calc-option">
                         <input type="radio" name="project-type" value="5900">
-                        <span>📄 Сайт-визитка / Корпоративный сайт (от 5 900 ₽)</span>
+                        <span>📄 Сайт-визитка / Корпоративный сайт (от 5 200 ₽)</span>
                     </label>
                     <label class="calc-option">
                         <input type="radio" name="project-type" value="6000">
