@@ -69,39 +69,7 @@ if (leadForm) {
     });
 }
 
-// 4. Функция инициализации независимых слайдеров на карточках
-function initCardSlider(sliderId) {
-    const container = document.getElementById(sliderId);
-    if (!container) return;
-
-    const prevBtn = container.querySelector('.prev-btn');
-    const nextBtn = container.querySelector('.next-btn');
-    const images = container.querySelectorAll('.slider-track .project-img');
-    let activeIndex = 0;
-
-    function changeImage(nextIndex) {
-        images[activeIndex].classList.remove('active');
-        activeIndex = (nextIndex + images.length) % images.length;
-        images[activeIndex].classList.add('active');
-    }
-
-    if (nextBtn && prevBtn) {
-        nextBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            changeImage(activeIndex + 1);
-        });
-
-        prevBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            changeImage(activeIndex - 1);
-        });
-    }
-}
-
-initCardSlider('slider-kadrgram');
-initCardSlider('slider-cookbook');
-
-// 5. Функции открытия и закрытия модальных окон
+// 4. Функции открытия и закрытия модальных окон
 function openModal(modalId) {
     const targetModal = document.getElementById(modalId);
     if (targetModal) {
@@ -117,7 +85,8 @@ function closeModal(modalId) {
         document.body.style.overflow = '';
     }
 }
-// Функция инициализации независимых слайдеров внутри модальных окон
+
+// 5. Функция инициализации независимых слайдеров внутри карточек и модальных окон
 function initCardSlider(sliderId) {
     const container = document.getElementById(sliderId);
     if (!container) return;
@@ -135,21 +104,25 @@ function initCardSlider(sliderId) {
 
     if (nextBtn && prevBtn) {
         nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             e.stopPropagation(); // Не закрываем модалку при клике на стрелку
             changeImage(activeIndex + 1);
         });
 
         prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             e.stopPropagation();
             changeImage(activeIndex - 1);
         });
     }
 }
 
-// Запускаем слайдеры для обоих модальных окон
+// Запускаем слайдеры для всех карточек и модальных окон
 initCardSlider('slider-kadrgram');
 initCardSlider('slider-cookbook');
 initCardSlider('slider-astregion');
+initCardSlider('slider-zoo30');
+
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         const openedModal = document.querySelector('.modal-overlay.active');
