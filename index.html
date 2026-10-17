@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Али | Premium Web & Bot Development</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 
     <div class="background-glow bg-glow-1"></div>
     <div class="background-glow bg-glow-2"></div>
+
+    <!-- Фоновая 3D-сетка (едет по всему сайту) -->
+    <canvas id="bg-grid-3d"></canvas>
+
+    <!-- Фоновые 3D-фигуры, плавающие по странице -->
+    <canvas id="bg3d-canvas"></canvas>
 
     <!-- Навигация -->
     <nav class="navbar">
@@ -27,6 +34,7 @@
 
     <!-- Главный экран -->
     <header class="hero">
+        <canvas id="hero-3d"></canvas>
         <div class="container hero-container">
             <div class="hero-badge">Fullstack Developer</div>
             <h1>Али — <span class="gradient-text">разработчик сайтов</span> и Telegram-ботов</h1>
@@ -798,6 +806,7 @@
         </div>
     </section>
 
+    <script src="3d.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
