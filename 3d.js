@@ -117,7 +117,7 @@
         }
         sizeBg();
 
-        var NODE_COUNT = window.innerWidth < 768 ? 26 : 46;
+        var NODE_COUNT = window.innerWidth < 768 ? 16 : 30;
         var SPREAD_X = 16, SPREAD_Y = 10, SPREAD_Z = 6;
         var nodes = [];
         var nodeGeo = new THREE.BufferGeometry();
@@ -139,7 +139,7 @@
 
         // Линии связи между близкими узлами — "граф" в духе сетевой схемы
         var linkGeo = new THREE.BufferGeometry();
-        var linkMat = new THREE.LineBasicMaterial({ color: 0x1C1C1A, transparent: true, opacity: 0.06 });
+        var linkMat = new THREE.LineBasicMaterial({ color: 0x1C1C1A, transparent: true, opacity: 0.04 });
         var linkLines = new THREE.LineSegments(linkGeo, linkMat);
         scene.add(linkLines);
 
