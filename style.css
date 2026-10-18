@@ -132,7 +132,7 @@ body {
 }
 
 /* ===================== Главный экран ===================== */
-.hero { padding: 108px 0 64px 0; text-align: left; }
+.hero { padding: 86px 0 48px 0; text-align: left; }
 
 .hero-badge,
 .hero h1,
@@ -165,7 +165,7 @@ body {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.3px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     border: none;
 }
 .hero-badge::before {
@@ -381,6 +381,16 @@ body {
     background: var(--ink);
     color: var(--surface);
     border-color: var(--ink);
+}
+
+/* Карточка без фото: статус встроен в текстовый блок, без пустого места сверху */
+.project-card.no-image .card-content {
+    padding-top: 28px;
+}
+.project-status.status-inline {
+    position: static;
+    display: inline-block;
+    margin-bottom: 16px;
 }
 
 .btn-project {
